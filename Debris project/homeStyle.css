@@ -1021,7 +1021,7 @@ label #cancel{
     position: fixed;
     width: 100%;
     height: 100vh;
-      z-index:1;
+      z-index:100;
     background-color: #8a3aff;
     top: 80px;
     left :-100%;
