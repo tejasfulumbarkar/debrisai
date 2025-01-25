@@ -257,6 +257,72 @@ iframe{
   }
 }
 
+/* Container to center the button */
+.button-container {
+  display: flex;
+  
+ gap: 1rem;
+  margin: 0;
+}
+
+/* Base button styling */
+.animated-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background-color: #1552b5; /* Blue accent color */
+  border: 2px solid rgb(216, 214, 134);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  animation: pulse 2s infinite; /* Continuous animation */
+  transition: color 0.4s, border-color 0.4s;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+  }
+  50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 112, 243, 0.8);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 112, 243, 0.5);
+  }
+}
+
+/* Hover effect */
+.animated-button:hover {
+  color: black;
+  font-weight: 100px;
+  border-color: #0070f3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .trybtnclass{
 
   display: flex;
@@ -699,6 +765,10 @@ iframe{
   .action-button {
       padding: 0.5rem 1rem;
   }
+ .animated-button{
+    padding: 10px;
+    font-size: 0.5rem;
+ }
 
   .images img {
       width: 40px;
