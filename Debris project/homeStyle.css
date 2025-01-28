@@ -377,6 +377,98 @@ iframe{
   align-items: center;
 }
 
+/* Styling for the photo gallery section */
+.photo-gallery {
+  background-color: #1a1a1a; /* Dark background color */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 40px;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.photo-gallery h2 {
+  font-size: 2rem;
+  color: #e74dfe; /* Violet color for the heading */
+  margin-bottom: 20px;
+}
+
+.gallery-items {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 10px;
+}
+
+.gallery-item {
+  background: linear-gradient(135deg, #79c6f2, #e74dfe); /* Gradient background */
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  min-width: 300px; /* Ensure items have a minimum width */
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+
+}
+
+.gallery-item img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.gallery-item p {
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif; /* Use 'Outfit' font */
+
+  color: #1e1e1e; /* Light blue color for the text */
+  margin-top: 10px;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*   about us section css 
            */ 
 
