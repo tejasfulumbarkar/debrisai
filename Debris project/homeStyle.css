@@ -930,6 +930,7 @@ iframe{
     .navbar ul {
       padding: 0;
         gap: 0;
+        display: none;
     }
       .animated-button{
           font-size:0.5rem;
@@ -1218,6 +1219,7 @@ label #cancel{
   .navbar a{
     font-size: 20px;
     padding: 0;
+      display: none;
   }
 
   footer h2{
