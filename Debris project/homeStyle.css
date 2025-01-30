@@ -893,6 +893,7 @@ iframe{
 
 
 
+
 /* Responsive design 
 @media (max-width: 480px) {
   .content h1 {
@@ -906,10 +907,6 @@ iframe{
   .action-button {
       padding: 0.5rem 1rem;
   }
- .animated-button{
-    padding: 10px;
-    font-size: 0.5rem;
- }
 
   .images img {
       width: 40px;
@@ -932,9 +929,6 @@ iframe{
         gap: 0;
         display: none;
     }
-      .animated-button{
-          font-size:0.5rem;
-      }
 
 
     .buttons a:hover{
@@ -1018,7 +1012,7 @@ iframe{
 
    .image img{
     
-    margin-right: 50px;
+    margin-right: 70px;
     height: 150px;
     width: 150px;
     border: 3px solid violet;
@@ -1096,7 +1090,10 @@ iframe{
   .logos img {
       width: 80px;
   }
-
+ .animated-button{
+    padding: 10px;
+    font-size: 0.5rem;
+ }
   .about p {
     font-size: 0.9rem; /* Further reduce text size */
   }
@@ -1219,7 +1216,6 @@ label #cancel{
   .navbar a{
     font-size: 20px;
     padding: 0;
-      display: none;
   }
 
   footer h2{
@@ -1237,7 +1233,6 @@ label #cancel{
     position: fixed;
     width: 100%;
     height: 100vh;
-      z-index:100;
     background-color: #8a3aff;
     top: 80px;
     left :-100%;
@@ -1252,7 +1247,7 @@ label #cancel{
  } 
  #check:checked ~ ul{
     left:0;
-    z-index: 100;
+    z-index: 1;
     display: block;
     
  }
