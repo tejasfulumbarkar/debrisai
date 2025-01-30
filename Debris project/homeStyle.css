@@ -921,9 +921,7 @@ iframe{
 
   @media (max-width: 768px) {
 
-    *{
-      box-sizing: border-box;
-    }
+    
     .navbar ul {
       padding: 0;
         gap: 0;
