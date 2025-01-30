@@ -1234,6 +1234,7 @@ label #cancel{
     background-color: #8a3aff;
     top: 80px;
     left :-100%;
+    display:none;
     text-align: center;
     transition:all .5s ;
   }
