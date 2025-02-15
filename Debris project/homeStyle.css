@@ -22,8 +22,8 @@ html,body {
 
 .orb-cursor {
     position: fixed;
-    width: 60px; /* Adjust size */
-    height: 60px;
+    width: 40px; /* Adjust size */
+    height: 40px;
     background: radial-gradient(circle, rgba(0, 255, 255, 0.9) 0%, rgba(0, 100, 255, 0.6) 80%);
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 100, 255, 0.6);
@@ -31,7 +31,7 @@ html,body {
     transform: translate(-50%, -50%);
     transition: transform 0.08s linear;
     z-index: 9999;
-    mix-blend-mode: screen;
+    
 }
 
   
