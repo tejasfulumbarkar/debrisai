@@ -34,27 +34,43 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------------- Glowing Orb Cursor ----------------
 
 let posX = 0, posY = 0;
-let mouseX = 0, mouseY = 0;
-const speed = 0.1; // Adjust for smoother movement
+  let mouseX = 0, mouseY = 0;
+  const speed = 0.1; // Adjust for smoother movement
 
-const orbCursor = document.querySelector('.orb-cursor');
+  const orbCursor = document.querySelector('.orb-cursor');
+  document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      createTrail(mouseX, mouseY);
+  });
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
+  function animateOrb() {
+      const distX = mouseX - posX;
+      const distY = mouseY - posY;
+      posX += distX * speed;
+      posY += distY * speed;
 
-function animateOrb() {
-    const distX = mouseX - posX;
-    const distY = mouseY - posY;
-    posX += distX * speed;
-    posY += distY * speed;
+      orbCursor.style.left = `${posX}px`;
+      orbCursor.style.top = `${posY}px`;
 
-    orbCursor.style.left = `${posX}px`;
-    orbCursor.style.top = `${posY}px`;
+      requestAnimationFrame(animateOrb);
+  }
 
-    requestAnimationFrame(animateOrb);
-}
+  animateOrb();
 
-animateOrb();
-    });
+  function createTrail(x, y) {
+      const trail = document.createElement("div");
+      trail.classList.add("trail");
+      document.body.appendChild(trail);
+
+      trail.style.left = `${x}px`;
+      trail.style.top = `${y}px`;
+
+      setTimeout(() => {
+          trail.style.opacity = "0";
+          trail.style.transform = "scale(1.5)";
+          setTimeout(() => {
+              trail.remove();
+          }, 300);
+      }, 100);
+  }
