@@ -17,21 +17,20 @@ html,body {
     
   }
 * {
-    cursor: none;  /* Hide default cursor */
+    cursor: none; /* Hide default cursor */
 }
 
 .orb-cursor {
     position: fixed;
-    width: 50px; /* Adjust size */
-    height: 50px;
-    background: radial-gradient(circle, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 0) 80%);
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 255, 255, 0.8);
     border-radius: 50%;
-    pointer-events: none; /* Prevent interaction */
+    pointer-events: none;
     transform: translate(-50%, -50%);
-    
-    z-index: 9999; /* Always above other elements */
-    transition: transform 0.1s ease-out;
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6); /* Glow Effect */
+    z-index: 9999;
+    transition: transform 0.02s linear; /* Faster response */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
 }
 
   
