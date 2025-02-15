@@ -55,3 +55,5 @@ function animateCursor() {
 }
 
 animateCursor();
+
+animateCursor();
