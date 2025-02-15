@@ -33,9 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let posX = 0, posY = 0;
     let mouseX = 0, mouseY = 0;
-    const speed = 0.15; // Smoother movement
+    const speed = 0.2; // Reduce lag by adjusting speed
 
-    // Create cursor element once
     const cursor = document.createElement("div");
     cursor.classList.add("orb-cursor");
     document.body.appendChild(cursor);
@@ -43,14 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
+        cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`; // Instant follow
     });
 
     function animateCursor() {
         posX += (mouseX - posX) * speed;
         posY += (mouseY - posY) * speed;
-
-        cursor.style.transform = `translate(${posX}px, ${posY}px)`;
-
+        cursor.style.left = `${posX}px`;
+        cursor.style.top = `${posY}px`;
         requestAnimationFrame(animateCursor);
     }
 
