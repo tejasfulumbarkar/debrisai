@@ -39,7 +39,7 @@ html,body {
   border-radius: 50%;
   pointer-events: none;
   box-shadow: 0 0 10px rgba(0, 200, 255, 0.8);
-  transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
   
 
