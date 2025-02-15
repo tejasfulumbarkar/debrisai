@@ -29,6 +29,25 @@ html,body {
     padding-left: 40px;
 }
 
+
+* {
+    cursor: none; /* Hide default cursor */
+}
+
+.orb-cursor {
+    position: fixed;
+    width: 60px; /* Adjust size */
+    height: 60px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.9) 0%, rgba(0, 100, 255, 0.6) 80%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 100, 255, 0.6);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s linear;
+    z-index: 9999;
+    
+}
+
                 
   
   .navbar {
