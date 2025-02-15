@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // -------------- Horizontal Scroll for Gallery ----------------
     const galleryItems = document.querySelector(".gallery-items");
-
     let isDown = false;
     let startX, scrollLeft;
 
@@ -30,15 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // -------------- Glowing Orb Cursor ----------------
-
-  // -------------- Glowing Orb Cursor ----------------
-
-document.addEventListener("DOMContentLoaded", () => {
     let posX = 0, posY = 0;
     let mouseX = 0, mouseY = 0;
     const speed = 0.15; // Slightly increased speed for smoother effect
 
     const orbCursor = document.querySelector('.orb-cursor');
+    if (!orbCursor) {
+        console.error("Element .orb-cursor not found in the DOM!");
+        return;
+    }
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
@@ -75,4 +76,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 350);
         }, 120);
     }
-
+});
