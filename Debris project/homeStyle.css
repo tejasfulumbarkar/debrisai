@@ -24,7 +24,7 @@ html,body {
   position: fixed;
   width: 35px;
   height: 35px;
-  background: radial-gradient(circle, rgba(0, 200, 255, 1) 0%, rgba(0, 0, 50, 1) 70%);
+  background: radial-gradient(circle, rgba(0, 200, 255, 1) 0%, rgba(0, 0, 50, 1) 90%);
   border-radius: 50%;
   pointer-events: none;
   box-shadow: 0 0 15px rgba(0, 200, 255, 0.8);
