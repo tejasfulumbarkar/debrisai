@@ -44,15 +44,6 @@ document.addEventListener("mousemove", (e) => {
     mouseY = e.clientY;
 });
 
-    let cursor = document.querySelector(".orb-cursor");
-
-document.addEventListener("mousemove", (e) => {
-    if (cursor) {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    }
-});
-
-
 function animateCursor() {
     posX += (mouseX - posX) * speed;
     posY += (mouseY - posY) * speed;
