@@ -31,29 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // -------------- Glowing Orb Cursor ----------------
 
-    let posX = 0, posY = 0;
+  // -------------- Glowing Orb Cursor ----------------
+
+let posX = 0, posY = 0;
 let mouseX = 0, mouseY = 0;
-const speed = 0.1; // Smoother movement
+const speed = 0.1; // Adjust for smoother movement
 
-const cursor = document.createElement("div");
-cursor.classList.add("orb-cursor");
-document.body.appendChild(cursor);
+const orbCursor = document.querySelector('.orb-cursor');
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
 
-function animateCursor() {
-    posX += (mouseX - posX) * speed;
-    posY += (mouseY - posY) * speed;
+function animateOrb() {
+    const distX = mouseX - posX;
+    const distY = mouseY - posY;
+    posX += distX * speed;
+    posY += distY * speed;
 
-    cursor.style.left = `${posX}px`;
-    cursor.style.top = `${posY}px`;
+    orbCursor.style.left = `${posX}px`;
+    orbCursor.style.top = `${posY}px`;
 
-    requestAnimationFrame(animateCursor);
+    requestAnimationFrame(animateOrb);
 }
 
-animateCursor();
-
-animateCursor();
+animateOrb();
