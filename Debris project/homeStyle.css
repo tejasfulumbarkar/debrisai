@@ -349,7 +349,6 @@ iframe{
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  animation: pulse 2s infinite; /* Continuous animation */
   transition: color 0.4s, border-color 0.4s;
 }
 
