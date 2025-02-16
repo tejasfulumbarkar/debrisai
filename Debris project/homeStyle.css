@@ -154,7 +154,7 @@ html,body {
     color: #fdf7f7;
 }
 
-.buttons a:hover{
+.demobtn a:hover{
   background-color: #ff3beb;
   color: black;
   transform: scale(1.1); /* Increase size */
