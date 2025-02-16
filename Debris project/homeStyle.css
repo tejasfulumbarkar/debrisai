@@ -154,17 +154,13 @@ html,body {
     color: #fdf7f7;
 }
 
-.demobtn a:hover{
+#demobtn a:hover{
   background-color: #ff3beb;
   color: black;
   transform: scale(1.1); /* Increase size */
 }
 
-#demobtn a:hover{
-  color: #000;
-}
-  
-  
+
   
   .images {
     display: flex;
