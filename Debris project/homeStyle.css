@@ -43,9 +43,6 @@ html,body {
 }
   
 
-iframe {
-  pointer-events: none !important;
-}
 .orb {
   cursor: none;
 }
