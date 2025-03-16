@@ -10,14 +10,82 @@ html,body {
     overflow-x: hidden;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    
-
-
-    
-    
-    
+       
   }
  @import url('https://fonts.cdnfonts.com/css/outfit');
+
+/* Hide default cursor */
+body {
+    cursor: none;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    transform-origin: center;
+}
+
+.cursor.hover {
+    width: 40px;
+    height: 40px;
+    background: rgba(121, 242, 255, 0.8);
+    mix-blend-mode: normal;
+    transform: scale(1.5);
+}
+
+.cursor::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite;
+    transition: border-color 0.3s ease;
+}
+
+.cursor.hover::after {
+    border-color: rgba(121, 242, 255, 0.3);
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Hide cursor on demo section */
+#demo {
+    cursor: default;
+}
+
+#demo * {
+    cursor: default;
+}
+
+/* Ensure iframe has default cursor */
+iframe {
+    cursor: default !important;
+}
+
+
+
 
 
 
@@ -1300,77 +1368,5 @@ label #cancel{
     margin-bottom: 20px;
 }
 }
-
-/* Hide default cursor */
-body {
-    cursor: none;
-}
-
-.cursor {
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-    transform-origin: center;
-}
-
-.cursor.hover {
-    width: 40px;
-    height: 40px;
-    background: rgba(121, 242, 255, 0.8);
-    mix-blend-mode: normal;
-    transform: scale(1.5);
-}
-
-.cursor::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse 1.5s infinite;
-    transition: border-color 0.3s ease;
-}
-
-.cursor.hover::after {
-    border-color: rgba(121, 242, 255, 0.3);
-    animation: none;
-}
-
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* Hide cursor on demo section */
-#demo {
-    cursor: default;
-}
-
-#demo * {
-    cursor: default;
-}
-
-/* Ensure iframe has default cursor */
-iframe {
-    cursor: default !important;
-}
-
-
 
 
