@@ -29,55 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryItems.scrollLeft = scrollLeft - walk;
     });
 
-    // -------------- Glowing Orb Cursor ----------------
-    let posX = 0, posY = 0;
-    let mouseX = 0, mouseY = 0;
-    const speed = 0.15; // Slightly increased speed for smoother effect
-
-    const orbCursor = document.querySelector('.orb-cursor');
-    if (!orbCursor) {
-        console.error("Element .orb-cursor not found in the DOM!");
-        return;
-    }
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        createTrail(mouseX, mouseY);
-    });
-
-    function animateOrb() {
-        const distX = mouseX - posX;
-        const distY = mouseY - posY;
-        posX += distX * speed;
-        posY += distY * speed;
-
-        orbCursor.style.left = `${posX}px`;
-        orbCursor.style.top = `${posY}px`;
-
-        requestAnimationFrame(animateOrb);
-    }
-
-    animateOrb();
-
-    function createTrail(x, y) {
-        const trail = document.createElement("div");
-        trail.classList.add("trail");
-        document.body.appendChild(trail);
-
-        trail.style.left = `${x}px`;
-        trail.style.top = `${y}px`;
-
-        setTimeout(() => {
-            trail.style.opacity = "0";
-            trail.style.transform = "scale(1.8)"; // Slightly larger glow effect
-            setTimeout(() => {
-                trail.remove();
-            }, 350);
-        }, 120);
-    }
-});
-
+   
 // Create a custom cursor element
 const cursor = document.createElement("div");
 cursor.classList.add("cursor");
