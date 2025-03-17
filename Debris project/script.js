@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+    }
+
     const galleryItems = document.querySelector('.gallery-items');
   
     let isDown = false;
@@ -130,30 +162,36 @@ clickableElements.forEach(element => {
     });
 });
 
-// Testimonials Animation Control
+// Testimonials Animation
 document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.testimonial-track');
     const testimonials = document.querySelectorAll('.testimonial');
-
-    // Pause animation on hover
-    track.addEventListener('mouseenter', () => {
-        track.style.animationPlayState = 'paused';
-    });
-
-    track.addEventListener('mouseleave', () => {
-        track.style.animationPlayState = 'running';
-    });
-
-    // Clone testimonials for seamless loop if needed
-    const testimonialsNeeded = Math.ceil(window.innerWidth / 330) + 1;
-    const currentTestimonials = testimonials.length;
     
-    if (currentTestimonials < testimonialsNeeded) {
-        testimonials.forEach(testimonial => {
-            const clone = testimonial.cloneNode(true);
-            track.appendChild(clone);
+    // Intersection Observer for testimonials
+    const testimonialObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add staggered animation delay
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    entry.target.style.transition = 'all 0.6s ease';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 200); // Stagger the animations
+                
+                testimonialObserver.unobserve(entry.target);
+            }
         });
-    }
+    }, {
+        threshold: 0.2
+    });
+
+    // Observe each testimonial
+    testimonials.forEach(testimonial => {
+        testimonial.style.opacity = '0';
+        testimonialObserver.observe(testimonial);
+    });
 });
 
 // Enhanced particle effect
@@ -287,36 +325,3 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsContainer);
     }
 });
-// Add hamburger menu functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const body = document.body;
-
-    function toggleMenu() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-    }
-
-    // Toggle menu on hamburger click
-    hamburger.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.style.overflow = 'auto';
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-            toggleMenu();
-        }
-    });
-});
-
-// ... existing code ...
