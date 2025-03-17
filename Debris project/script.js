@@ -238,13 +238,6 @@ document.addEventListener('mousemove', (e) => {
     heroContent.style.transform = `translate(${mouseX * 10}px, ${mouseY * 10}px)`;
 });
 
-
-
-
-
-    heroContent.style.transform = `translate(${mouseX * 10}px, ${mouseY * 10}px)`;
-});
-
 // Animated Counter for Space Stats
 const animateCounter = (element, target) => {
     const duration = 2000; // Animation duration in milliseconds
