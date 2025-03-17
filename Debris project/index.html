@@ -28,53 +28,44 @@
 
         <li><a href="#home">Home</a></li>
         <li><a href="#demo">Demo</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#photo-gallery">Gallery</a></li>
 
-        <li><a href="#about">About</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contactus">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  
-
-
   <section class="hero" id="hero">
-
-  
-
-    <div class="content">
-      <h1>Debris AI</h1>
-      <p>
-        Welcome to Debris AI, we provide innovative solutions for the pressing issue of space debris.<br>
-        Utilizing advanced Artificial Intelligence to ensure a safer and clearer orbital environment for all.
-      </p>
-     <div class="button-container">
-        <a href="#demo" class="animated-button" >See Demo</a>
-        <a href="#contactus"  class="animated-button" >Contact us</a>
-
+    <div class="hero-main">
+        <div class="content">
+            <h1>Debris AI</h1>
+            <p>
+                Welcome to Debris AI, we provide innovative solutions for the pressing issue of space debris.<br>
+                Utilizing advanced Artificial Intelligence to ensure a safer and clearer orbital environment for all.
+            </p>
+            <div class="button-container">
+                <a href="#demo" class="animated-button">See Demo</a>
+                <a href="#contactus" class="animated-button">Contact us</a>
+            </div>
+        </div>
+        <div class="images">
+            <img src="images/hero_image1.jpg" alt="Satellite 1">
+            <img src="images/hero_image_2.jpg" alt="Earth">
+            <img src="images/hero_image3.jpg" alt="Debris">
+        </div>
     </div>
-    </div>
-    <div class="images">
-      <img src="images/hero_image1.jpg" alt="Satellite 1">
-      <img src="images/hero_image_2.jpg" alt="Earth">
-      <img src="images/hero_image3.jpg" alt="Debris">
-    </div>
-<div class="particles"></div>
+
+    <footer>
+        <h2>Featured on</h2>
+        <div class="logos">
+            <img src="images/featured on cropped.PNG" alt="Time">
+        </div>
+    </footer>
+
+    <div class="particles"></div>
   </section>
-
-
-  <footer>
-    <h2>Featured on</h2>
-    <div class="logos">
-      <img src="images/featured on cropped.PNG" alt="Time">
-
-    </div>
-
-  </footer>
-
-    
 
 
   <!--  DEMO SECTION >>>>>>>>>>>>>>>>>>>>>>>>>-->
@@ -85,9 +76,10 @@
       <h2>Debris AI Demo</h2>
       <p>
         Here is a brief demonstration of our AI in action.
+         
       </p>
 
- <div class="steps">
+      <div class="steps">
         <h3>Steps to Use the Demo:</h3>
         <ol>
           <li><strong>Browse and Upload an Image:</strong> Click on the "Browse" button to open your files and select an image to upload.</li>
@@ -100,14 +92,9 @@
           </li>
         </ol>
       </div>
-
-
-
-
-
-      
-      
     </div>
+      
+    
       <div class="output" id="output">
         
           <iframe src="https://debrisnew2-vbzjxvwzczyzdshpgppr5q.streamlit.app/?embed=true" width="100%" height="100vh" style="border: 0;"></iframe>
@@ -119,6 +106,8 @@
       
       </div>
       
+    
+     
   </section>
 
 <!-- PHOTO GALLERY SECTION >>>>>>>>>>>>>>>>>>>>>>>>>-->
@@ -136,16 +125,19 @@
       </div>
       <div class="gallery-item">
         <img src="images/detected3.jpg" alt="Debris Image 3">
-        <p>Debris detected in image 2</p>
+        <p>Debris detected in image 3</p>
       </div>
-     
+      <div class="gallery-item">
+        <img src="images/Screenshot 2025-01-28 084312.png" alt="Debris Image 3">
+        <p> No Debris in Image 3</p>
+      </div>
       <div class="gallery-item">
         <img src="images/detected7.jpg" alt="Debris Image 3">
         <p>Debris detected in image 3</p>
       </div>
       <div class="gallery-item">
         <img src="images/dtected6.jpg" alt="Debris Image 3">
-        <p>Debris detected in image 4</p>
+        <p>Debris detected in image 3</p>
       </div>
       <!-- Add more gallery items as needed -->
     </div>
@@ -169,18 +161,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  
 
   <!--  ABOUT US  >>>>>>>>>>>>>>>>>>>>>>>>>-->
   <section class="about us " id="about">
@@ -210,47 +190,67 @@
   <!--  Reviews Swction   >>>>>>>>>>>>>>>>>>>>>>>>>-->
 
   <section class="reviews" id="reviews">
-
     <h1 class="heading">Testimonials</h1>
-
-
     <div class="testimonials-container">
-
-
-      <!-- Testimonial 1 -->
-      <div class="testimonial">
-        <div class="avatar">
-          <img src="images/testimonial 1.jpg" alt="Mr. David hans">
+      <div class="testimonial-track">
+        <!-- Original Testimonials -->
+        <div class="testimonial">
+          <div class="avatar">
+            <img src="images/testimonial 1.jpg" alt="Mr. David hans">
+          </div>
+          <div class="content">
+            <h3>Mr. David hans</h3>
+            <p>I am throughly impressed with the service of Debris AI</p>
+          </div>
         </div>
-        <div class="content">
-          <h3>Mr. David hans</h3>
-          <p>While this AI-powered space debris removal project is still in its early stages, I can see the immense potential it holds. </p>
+        <div class="testimonial">
+          <div class="avatar">
+            <img src="images/testimonial 3.jpg" alt="Mrs. Christoper Robin">
+          </div>
+          <div class="content">
+            <h3>Mrs.Robin potter</h3>
+            <p>I am throughly impressed with the service of Debris AI</p>
+          </div>
         </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="avatar">
-          <img src="images/testimonial 3.jpg" alt="Mrs. Christoper Robin">
+        <div class="testimonial">
+          <div class="avatar">
+            <img src="images/testimonial 4.jpg" alt="Mr. Ana Libert">
+          </div>
+          <div class="content">
+            <h3>Mr. Ana Libert</h3>
+            <p>I am throughly impressed with the service of Debris AI</p>
+          </div>
         </div>
-        <div class="content">
-          <h3>Mr.Robin potter</h3>
-          <p>Space debris is a huge problem, and this AI-powered solution has immense potential for cleaner orbits in the future.</p>
+        <!-- Duplicated Testimonials for continuous scroll -->
+        <div class="testimonial">
+          <div class="avatar">
+            <img src="images/testimonial 1.jpg" alt="Mr. David hans">
+          </div>
+          <div class="content">
+            <h3>Mr. David hans</h3>
+            <p>I am throughly impressed with the service of Debris AI</p>
+          </div>
         </div>
-      </div>
-      <!-- Testimonial 3 -->
-      <div class="testimonial">
-        <div class="avatar">
-          <img src="images/testimonial 4.jpg" alt="Mr. Ana Libert">
+        <div class="testimonial">
+          <div class="avatar">
+            <img src="images/testimonial 3.jpg" alt="Mrs. Christoper Robin">
+          </div>
+          <div class="content">
+            <h3>Mrs.Robin potter</h3>
+            <p>I am throughly impressed with the service of Debris AI</p>
+          </div>
         </div>
-        <div class="content">
-          <h3>Mrs. Ana Libert</h3>
-          <p>The space debris problem is urgent, and while this AI model is still being refined, its potential to revolutionize space safety is clear</p>
+        <div class="testimonial">
+          <div class="avatar">
+            <img src="images/testimonial 4.jpg" alt="Mr. Ana Libert">
+          </div>
+          <div class="content">
+            <h3>Mr. Ana Libert</h3>
+            <p>I am throughly impressed with the service of Debris AI</p>
+          </div>
         </div>
       </div>
     </div>
-
-
-
   </section>
 
   <!--  Contact us  >>>>>>>>>>>>>>>>>>>>>>>>>-->
@@ -265,8 +265,8 @@
         <div class="footer-section contact">
           <h2>Contact</h2>
           <div class="info-box">
-            <p>Email: contactdebrisai@gmail.com</p>
-            <p>Contact: +91 7219287449</p>
+            <p>Email: debrisdev@gmail.com</p>
+            <p>Contact: +91 2709873783</p>
           </div>
         </div>
         <div class="footer-section location">
@@ -282,7 +282,7 @@
           </div>
 
           <form action="https://api.web3forms.com/submit" method="POST">
-            <div class="form">
+            <div class="form" id="myForm">
               <input type="hidden" name="access_key" value="8620badd-09f6-421e-9528-42a8456b0af1">
               <input type="text" class="form-control" name="name" placeholder="Your Name" required>
               <input type="email" class="form-control" name="name" placeholder="Your Email" required>
@@ -302,10 +302,10 @@
 
     <div class="social-links">
       <h3>Follow us on:</h3>
-      <a href="https://www.instagram.com/debrisai2025/profilecard/?igsh=MXVlNGg0bnJqb2R5MQ==" target="_blank"><i class="fab fa-instagram "></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram "></i></a>
       <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.linkedin.com/company/debrisai/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.linkedin.com/in/tejasfulumbarkar/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
 
 
@@ -336,7 +336,6 @@
     </div>
     </div>
   </section>
-
   <script
     chatbot_id="67976009fa98b33833212f37"
     data-type="default"
