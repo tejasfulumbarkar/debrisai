@@ -237,3 +237,60 @@ document.addEventListener('mousemove', (e) => {
 
     heroContent.style.transform = `translate(${mouseX * 10}px, ${mouseY * 10}px)`;
 });
+
+
+
+
+
+    heroContent.style.transform = `translate(${mouseX * 10}px, ${mouseY * 10}px)`;
+});
+
+// Animated Counter for Space Stats
+const animateCounter = (element, target) => {
+    const duration = 2000; // Animation duration in milliseconds
+    const steps = 50; // Number of steps
+    const stepDuration = duration / steps;
+    let currentNumber = 0;
+    
+    const increment = target / steps;
+    
+    const updateCounter = () => {
+        currentNumber += increment;
+        if (currentNumber > target) {
+            currentNumber = target;
+        }
+        element.textContent = Math.round(currentNumber).toLocaleString();
+        
+        if (currentNumber < target) {
+            setTimeout(updateCounter, stepDuration);
+        }
+    };
+    
+    updateCounter();
+};
+
+// Intersection Observer for Space Stats
+const observerOptions = {
+    threshold: 0.2
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(number => {
+                const target = parseInt(number.getAttribute('data-target'));
+                animateCounter(number, target);
+            });
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe the stats container
+document.addEventListener('DOMContentLoaded', () => {
+    const statsContainer = document.querySelector('.stats-container');
+    if (statsContainer) {
+        statsObserver.observe(statsContainer);
+    }
+});
