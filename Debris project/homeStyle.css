@@ -998,121 +998,6 @@ iframe{
                   margin-top: 20px;
               }
             }
-
-
-/* Space Stats Section */
-.space-stats {
-    background: linear-gradient(135deg, rgba(26, 11, 46, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
-    padding: 60px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.space-stats::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(70, 61, 166, 0.2) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(232, 13, 252, 0.2) 0%, transparent 40%);
-    animation: gradientMove 15s ease infinite;
-    z-index: 1;
-}
-
-.stats-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    gap: 40px;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 200px;
-}
-
-.stat-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
-    border-color: rgba(121, 242, 255, 0.3);
-}
-
-.stat-number {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #79f2ff, #e74dfe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Outfit', sans-serif;
-}
-
-.stat-label {
-    font-size: 1.1rem;
-    color: #fff;
-    opacity: 0.9;
-    font-family: 'Outfit', sans-serif;
-}
-
-@media (max-width: 768px) {
-    .stats-container {
-        gap: 20px;
-    }
-
-    .stat-item {
-        min-width: 150px;
-        padding: 15px;
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .space-stats {
-        padding: 40px 10px;
-    }
-
-    .stat-item {
-        min-width: 130px;
-        padding: 10px;
-    }
-
-    .stat-number {
-        font-size: 2rem;
-    }
-
-    .stat-label {
-        font-size: 0.8rem;
-    }
-}
-
-/*    contact us  section css 
-             */
-
-
-
-
-
             
  /*    contact us  section css 
              */
@@ -1936,6 +1821,191 @@ button.send-btn:hover {
 .chat-box::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 3px;
+}
+
+/* Space Stats Section */
+.space-stats {
+    background: linear-gradient(135deg, rgba(26, 11, 46, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.space-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(70, 61, 166, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(232, 13, 252, 0.2) 0%, transparent 40%);
+    animation: gradientMove 15s ease infinite;
+    z-index: 1;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 200px;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
+    border-color: rgba(121, 242, 255, 0.3);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #79f2ff, #e74dfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Outfit', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #fff;
+    opacity: 0.9;
+    font-family: 'Outfit', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        gap: 20px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .space-stats {
+        padding: 40px 10px;
+    }
+
+    .stat-item {
+        min-width: 130px;
+        padding: 10px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+.space-stats {
+    background: linear-gradient(135deg, rgba(26, 11, 46, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-heading {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    font-weight: 800;
+    background: linear-gradient(-45deg, #79f2ff, #e74dfe, #79f2ff, #e74dfe);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s ease infinite;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.stats-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #79f2ff, #e74dfe);
+    border-radius: 2px;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+    .stats-heading {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .stats-heading::after {
+        width: 100px;
+        height: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-heading {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .stats-heading::after {
+        width: 80px;
+        height: 2px;
+    }
+}
+
+.space-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(70, 61, 166, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(232, 13, 252, 0.2) 0%, transparent 40%);
+    animation: gradientMove 15s ease infinite;
+    z-index: 1;
 }
 
 
