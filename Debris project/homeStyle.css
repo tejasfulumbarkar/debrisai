@@ -838,21 +838,19 @@ footer h2{
   color: #777; /* Lighter color for the nested list items */
 }
 
-.output{
-   
-    margin: 0;
-    padding: 0;
+.output {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color: rgb(219, 138, 235); /* Set background color to pink */
-    height: 40rem; /* Set height to screen size */
-    
+    background-color: rgb(219, 138, 235); /* Violet background */
+    height: 40rem; /* Set height as needed */
+    width: 100%; /* Ensure it takes full width */
     margin-top: 20px;
+    padding: 0; /* Remove any padding */
 }
-iframe{
-    width: 50rem;
-    height: 30rem;
+iframe {
+    width: 100%; /* Make iframe take full width */
+    height: 100%; /* Adjust height as needed */
     border: none;
     border-radius: 20px;
 }
