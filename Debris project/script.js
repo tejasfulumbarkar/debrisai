@@ -298,3 +298,20 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsContainer);
     }
 });
+
+// Audio player functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const audioPlayer = document.querySelector('audio');
+    
+    // Set initial time to 36 seconds when audio is loaded
+    audioPlayer.addEventListener('loadedmetadata', function() {
+        audioPlayer.currentTime = 36;
+    });
+
+    // When play button is clicked, ensure it starts from 36 seconds if at beginning
+    audioPlayer.addEventListener('play', function() {
+        if (audioPlayer.currentTime < 36) {
+            audioPlayer.currentTime = 36;
+        }
+    });
+});
