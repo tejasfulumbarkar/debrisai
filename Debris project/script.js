@@ -68,97 +68,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("contactForm");
     form.reset(); // Clear all input fields
   });
-// Create a custom cursor element
-const cursor = document.createElement("div");
-cursor.classList.add("cursor");
+// Create cursor elements
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
-// Trail effect
+// Create trail elements
+const numTrails = 5;
 const trails = [];
-const maxTrails = 10;
-
-function createTrail() {
-    const trail = document.createElement("div");
-    trail.classList.add("trail");
+for (let i = 0; i < numTrails; i++) {
+    const trail = document.createElement('div');
+    trail.classList.add('trail');
     document.body.appendChild(trail);
-    return trail;
+    trails.push({
+        element: trail,
+        x: 0,
+        y: 0
+    });
 }
 
-// Create initial trails
-for (let i = 0; i < maxTrails; i++) {
-    trails.push(createTrail());
-}
-
-let currentTrail = 0;
-
-// Move the cursor and update trails
-document.addEventListener("mousemove", (e) => {
-    // Update cursor position
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-
-    // Update trail
-    const trail = trails[currentTrail];
-    trail.style.left = `${e.clientX}px`;
-    trail.style.top = `${e.clientY}px`;
-    trail.style.opacity = 1;
-
-    // Fade out trail gradually
+// Update cursor position
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    
+    // Update trail positions with delay
     setTimeout(() => {
-        trail.style.opacity = 0;
+        trails.forEach((trail, index) => {
+            const delay = (index + 1) * 60;
+            setTimeout(() => {
+                trail.x = e.clientX;
+                trail.y = e.clientY;
+                trail.element.style.left = trail.x + 'px';
+                trail.element.style.top = trail.y + 'px';
+                trail.element.style.opacity = 1 - (index / numTrails);
+            }, delay);
+        });
     }, 50);
-
-    // Move to next trail position
-    currentTrail = (currentTrail + 1) % maxTrails;
 });
 
-// Hide default cursor on body
-document.body.style.cursor = 'none';
-
-// Handle cursor for demo section
-const demoSection = document.querySelector("#demo");
-const iframe = document.querySelector("iframe");
-
-if (demoSection) {
-    demoSection.addEventListener("mouseenter", () => {
-        cursor.style.display = "none";
-        trails.forEach(trail => trail.style.display = "none");
-        demoSection.style.cursor = "default";
-    });
-
-    demoSection.addEventListener("mouseleave", () => {
-        cursor.style.display = "block";
-        trails.forEach(trail => trail.style.display = "block");
-        demoSection.style.cursor = "none";
-    });
-}
-
-if (iframe) {
-    iframe.addEventListener("mouseenter", () => {
-        cursor.style.display = "none";
-        trails.forEach(trail => trail.style.display = "none");
-        iframe.style.cursor = "default";
-    });
-
-    iframe.addEventListener("mouseleave", () => {
-        cursor.style.display = "block";
-        trails.forEach(trail => trail.style.display = "block");
-        iframe.style.cursor = "none";
-    });
-}
-
-// Handle cursor for clickable elements
-const clickableElements = document.querySelectorAll('a, button, input[type="submit"], .animated-button, .neon-pulse, [role="button"]');
-
-clickableElements.forEach(element => {
-    element.addEventListener("mouseenter", () => {
+// Add hover effect for interactive elements
+const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .animated-button');
+interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
         cursor.classList.add('hover');
-        element.style.cursor = "none";
     });
-
-    element.addEventListener("mouseleave", () => {
+    
+    element.addEventListener('mouseleave', () => {
         cursor.classList.remove('hover');
-        element.style.cursor = "none";
+    });
+});
+
+// Hide cursor when leaving window
+document.addEventListener('mouseleave', () => {
+    cursor.style.display = 'none';
+    trails.forEach(trail => {
+        trail.element.style.display = 'none';
+    });
+});
+
+// Show cursor when entering window
+document.addEventListener('mouseenter', () => {
+    cursor.style.display = 'block';
+    trails.forEach(trail => {
+        trail.element.style.display = 'block';
     });
 });
 
