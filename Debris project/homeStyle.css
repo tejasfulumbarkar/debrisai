@@ -10,21 +10,66 @@ html,body {
     overflow-x: hidden;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     cursor: none;
 }
 
-/* Hide default cursor */
+/* Moon cursor styles */
 .cursor {
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    background: radial-gradient(circle at 30% 30%, #ffffff, #79f2ff);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-    transform-origin: center;
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+    box-shadow: 0 0 10px rgba(121, 242, 255, 0.5),
+                inset -4px -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cursor::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.trail {
+    width: 10px;
+    height: 10px;
+    background: rgba(121, 242, 255, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    mix-blend-mode: screen;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+}
+
+.cursor.hover {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e74dfe);
+    mix-blend-mode: screen;
+}
+
+/* Keep default cursor for interactive elements */
+a, button, input[type="submit"], .animated-button {
+    cursor: none;
+}
+
+iframe, #demo, #demo * {
+    cursor: default !important;
 }
 
 /* Navbar styles */
@@ -169,56 +214,19 @@ html,body {
 
 /* Additional styles */
 
-.cursor.hover {
-    width: 40px;
-    height: 40px;
-    background: rgba(121, 242, 255, 0.8);
-    mix-blend-mode: normal;
-    transform: scale(1.5);
+/* Remove cursor styles */
+
+/* Keep the iframe cursor default */
+iframe {
+    cursor: default !important;
 }
 
-.cursor::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse 1.5s infinite;
-    transition: border-color 0.3s ease;
-}
-
-.cursor.hover::after {
-    border-color: rgba(121, 242, 255, 0.3);
-    animation: none;
-}
-
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* Hide cursor on demo section */
 #demo {
     cursor: default;
 }
 
 #demo * {
     cursor: default;
-}
-
-/* Ensure iframe has default cursor */
-iframe {
-    cursor: default !important;
 }
 
 @import url('https://fonts.cdnfonts.com/css/outfit');
@@ -344,10 +352,8 @@ iframe {
 /* Button styling */
 .button-container {
     display: flex;
-    gap: clamp(0.5rem, 2vw, 1rem);
-    flex-wrap: nowrap;
-    width: 100%;
-    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0;
 }
 
 .animated-button {
@@ -414,9 +420,9 @@ iframe {
 }
 
 .images img:hover {
-    transform: translateY(-10px);
+    transform: scale(1.1);
     border-color: #79f2ff;
-    box-shadow: 0 15px 40px rgba(121, 242, 255, 0.3);
+    box-shadow: 0 0 30px rgba(123, 97, 255, 0.5);
 }
 
 /* Featured section styling */
@@ -689,8 +695,7 @@ iframe {
 /* Container to center the button */
 .button-container {
   display: flex;
-  
- gap: 1rem;
+  gap: 1rem;
   margin: 0;
 }
 
@@ -794,8 +799,75 @@ footer h2{
                width: 100%;
                 margin-top: 20px;
             }
-.demo{
-    padding: 30px;
+.demo {
+  background: linear-gradient(135deg, rgba(46, 11, 71, 0.95) 0%, rgba(26, 11, 46, 0.98) 100%);
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.demo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(231, 77, 254, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(231, 77, 254, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.steps {
+  background: rgba(231, 77, 254, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(231, 77, 254, 0.1);
+  margin-top: 20px;
+  border: 1px solid rgba(231, 77, 254, 0.1);
+}
+
+.steps h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #e74dfe, #bc59fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.output {
+  background: rgba(231, 77, 254, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(231, 77, 254, 0.1);
+  overflow: hidden;
+  height: 80vh;
+  margin-top: 40px;
+  box-shadow: 0 8px 32px rgba(231, 77, 254, 0.1);
+}
+
+.demo h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  background: linear-gradient(45deg, #79f2ff, #e74dfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.demo p {
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 /* Styling for the steps class */
@@ -1086,6 +1158,7 @@ iframe {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
+    z-index: 2;
 }
 
 .gallery-items {
@@ -1913,6 +1986,44 @@ iframe {
     .stat-label {
         font-size: 1rem;
     }
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.audio-player p {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.audio-player audio {
+  height: 30px;
+  width: 200px;
+}
+
+.audio-player audio::-webkit-media-controls-panel {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.audio-player audio::-webkit-media-controls-current-time-display,
+.audio-player audio::-webkit-media-controls-time-remaining-display {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .audio-player {
+    display: none;
+  }
 }
 
 
